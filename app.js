@@ -113,38 +113,26 @@
       <div class="guide-modal">
         <h3>✅ 主题已下载！</h3>
         <p style="margin:8px 0 20px;color:var(--text-muted)">
-          你选择了 <strong style="color:var(--text)">${themeName}</strong>
+          你选择了 <strong style="color:var(--text)">${themeName}</strong>，两种安装方式：
         </p>
-        <div class="guide-steps">
-          <div class="guide-step">
-            <span class="guide-num">1</span>
-            <div>
-              <strong>解压</strong>
-              <p>在 Finder 双击下载的 <code>${themeId}.zip</code> 自动解压</p>
-            </div>
+        <div style="margin-bottom:16px;padding:14px;background:rgba(99,102,241,0.08);border-radius:8px;border:1px solid rgba(99,102,241,0.3)">
+          <p style="font-size:13px;font-weight:600;color:var(--primary);margin-bottom:6px">🚀 方式一：复制命令到终端（推荐）</p>
+          <p style="font-size:12px;color:var(--text-muted);margin-bottom:6px">打开终端（Cmd+空格 → 输入 terminal），粘贴以下命令回车：</p>
+          <div style="display:flex;gap:6px;align-items:stretch">
+            <pre id="install-cmd" style="flex:1;background:var(--bg-card);padding:10px;border-radius:6px;font-size:11px;overflow-x:auto;line-height:1.7;margin:0;white-space:pre-wrap;word-break:break-all">curl -sL "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/releases/download/v1.0.0/theme-${themeId}.zip" -o /tmp/t.zip && unzip -o /tmp/t.zip -d /tmp/tt && cp /tmp/tt/theme.json ~/.codex/codex-skin-workshop/assets/ && cp /tmp/tt/*.jpg ~/.codex/codex-skin-workshop/assets/ && rm -rf /tmp/t.zip /tmp/tt && open ~/.codex/codex-skin-workshop/Start\ Codex\ Skin\ Workshop.command</pre>
+            <button onclick="navigator.clipboard.writeText(document.getElementById('install-cmd').textContent);this.textContent='✅ 已复制'" style="flex-shrink:0;padding:8px 12px;background:var(--primary);border:none;border-radius:6px;color:#fff;font-size:12px;cursor:pointer;font-family:inherit">复制</button>
           </div>
         </div>
-        <div style="margin:16px 0;padding:16px;background:var(--bg);border-radius:8px;border:1px solid var(--border)">
-          <p style="font-size:14px;font-weight:600;margin-bottom:10px">选择安装方式：</p>
-          <div style="display:flex;flex-direction:column;gap:10px">
-            <div style="padding:12px;background:rgba(99,102,241,0.08);border-radius:6px;border:1px solid rgba(99,102,241,0.2)">
-              <p style="font-size:13px;font-weight:600;color:var(--primary)">方式一：一键安装（推荐）</p>
-              <p style="font-size:12px;color:var(--text-muted);margin-top:4px">
-                在解压后的文件夹中双击 <code>Install.command</code><br>
-                Mac 首次运行需去「系统设置 → 隐私与安全性」→ 点击「仍要打开」
-              </p>
-            </div>
-            <div style="padding:12px;background:rgba(244,114,182,0.08);border-radius:6px;border:1px solid rgba(244,114,182,0.2)">
-              <p style="font-size:13px;font-weight:600;color:var(--accent)">方式二：手动安装</p>
-              <p style="font-size:12px;color:var(--text-muted);margin-top:4px">打开终端，执行：</p>
-              <pre style="background:var(--bg-card);padding:8px;border-radius:4px;font-size:12px;margin-top:4px;overflow-x:auto;line-height:1.7">cd ~/Downloads/theme-${themeId}
-cp theme.json ~/.codex/codex-skin-workshop/assets/
-cp *.jpg ~/.codex/codex-skin-workshop/assets/</pre>
-            </div>
-          </div>
+        <div style="padding:14px;background:rgba(244,114,182,0.08);border-radius:8px;border:1px solid rgba(244,114,182,0.2)">
+          <p style="font-size:13px;font-weight:600;color:var(--accent);margin-bottom:6px">📦 方式二：下载后手动安装</p>
+          <p style="font-size:12px;color:var(--text-muted);margin-bottom:4px">
+            1. 解压下载的 <code>theme-${themeId}.zip</code><br>
+            2. 双击文件夹中的 <code>双击安装.command</code><br>
+            3. Mac 首次需去「系统设置 → 隐私与安全性」→ 点「仍要打开」
+          </p>
         </div>
-        <p style="font-size:12px;color:var(--text-muted)">
-          完成后双击桌面 <code>Codex Skin Workshop.command</code> 重启生效
+        <p style="margin-top:16px;font-size:12px;color:var(--text-muted)">
+          💡 首次使用才需下载工具，之后只需替换主题文件即可
         </p>
       </div>
     `;
