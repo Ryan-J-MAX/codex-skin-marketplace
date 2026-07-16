@@ -150,7 +150,12 @@
             <span class="guide-num">2</span>
             <div>
               <strong>双击运行</strong>
-              <p>首次运行需要：右键 → 打开 → 点击「打开」</p>
+              <p>Mac 会提示「无法验证开发者」，按下面步骤操作：</p>
+              <div style="margin-top:4px;padding:8px;background:rgba(244,114,182,0.08);border-radius:6px;font-size:12px;color:var(--accent);line-height:1.6">
+                ⚠️ 打开「系统设置 → 隐私与安全性」<br>
+                往下翻找到该文件 → 点击「仍要打开」<br>
+                或右键文件 → 选择「打开」确认
+              </div>
             </div>
           </div>
           <div class="guide-step">
