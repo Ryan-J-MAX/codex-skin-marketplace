@@ -4,7 +4,7 @@
 // 添加新主题只需在这里加一条记录
 
 // 安装脚本下载链接 (Mac)
-const INSTALL_SCRIPT_URL = 'https://raw.githubusercontent.com/Ryan-J-MAX/Codex-Skin-Workshop/main/macos/Install%20Codex%20Skin%20Workshop.command';
+const INSTALL_SCRIPT_URL = 'https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/releases/download/v1.0.0/Codex-Skin-Workshop.zip';
 
 const themes = [
   {

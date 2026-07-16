@@ -103,28 +103,14 @@
 
   // --- 下载安装脚本 ---
   window.downloadInstallScript = function (themeName) {
-    // 用 fetch 获取脚本内容，构造 blob 下载
-    fetch(INSTALL_SCRIPT_URL)
-      .then(res => res.text())
-      .then(content => {
-        const blob = new Blob([content], { type: 'application/octet-stream' });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = 'Codex-Skin-Workshop.command';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
+    // 直接下载 Release zip（保留执行权限）
+    const link = document.createElement('a');
+    link.href = INSTALL_SCRIPT_URL;
+    link.download = 'Codex-Skin-Workshop.zip';
+    link.click();
 
-        // 弹出使用指南
-        setTimeout(() => showGuide(themeName), 500);
-      })
-      .catch(() => {
-        // fallback: 直接打开链接
-        window.open(INSTALL_SCRIPT_URL, '_blank');
-        setTimeout(() => showGuide(themeName), 800);
-      });
+    // 弹出使用指南
+    setTimeout(() => showGuide(themeName), 500);
   };
 
   // --- 使用指南弹窗 ---
@@ -143,7 +129,7 @@
             <span class="guide-num">1</span>
             <div>
               <strong>找到下载的文件</strong>
-              <p>在 Finder 的「下载」文件夹找到 <code>Codex-Skin-Workshop.command</code></p>
+              <p>在 Finder 的「下载」文件夹找到 <code>Codex-Skin-Workshop.zip</code>，双击解压</p>
             </div>
           </div>
           <div class="guide-step">
