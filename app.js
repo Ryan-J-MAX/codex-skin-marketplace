@@ -108,32 +108,34 @@
   function showGuide(themeId, themeName) {
     const overlay = document.createElement('div');
     overlay.className = 'modal-overlay';
+
+    // 生成安装命令：先确保工具存在，再安装主题
+    const installCmd = `[ -d ~/.codex/codex-skin-workshop ] || (curl -sL "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/releases/download/v1.0.0/Codex-Skin-Workshop.zip" -o /tmp/csw.zip && unzip -o /tmp/csw.zip -d ~/.codex/codex-skin-workshop/ > /dev/null 2>&1 && rm /tmp/csw.zip) && curl -sL "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/releases/download/v1.0.0/theme-${themeId}.zip" -o /tmp/t.zip && unzip -o /tmp/t.zip -d /tmp/tt > /dev/null 2>&1 && cp /tmp/tt/theme.json ~/.codex/codex-skin-workshop/assets/ && cp /tmp/tt/*.jpg ~/.codex/codex-skin-workshop/assets/ && rm -rf /tmp/t.zip /tmp/tt && open ~/.codex/codex-skin-workshop/Start\ Codex\ Skin\ Workshop.command`;
+
     overlay.innerHTML = `
       <button class="modal-close" onclick="this.parentElement.remove()">✕</button>
       <div class="guide-modal">
-        <h3>✅ 主题已下载！</h3>
-        <p style="margin:8px 0 20px;color:var(--text-muted)">
-          你选择了 <strong style="color:var(--text)">${themeName}</strong>，两种安装方式：
+        <h3>✅ 即将安装 ${themeName}</h3>
+        <p style="margin:8px 0 16px;color:var(--text-muted);font-size:13px">
+          复制下面一行命令，粘贴到终端（Cmd+空格 → terminal）回车，自动完成所有步骤
         </p>
         <div style="margin-bottom:16px;padding:14px;background:rgba(99,102,241,0.08);border-radius:8px;border:1px solid rgba(99,102,241,0.3)">
-          <p style="font-size:13px;font-weight:600;color:var(--primary);margin-bottom:6px">🚀 方式一：复制命令到终端（推荐）</p>
-          <p style="font-size:12px;color:var(--text-muted);margin-bottom:6px">打开终端（Cmd+空格 → 输入 terminal），粘贴以下命令回车：</p>
           <div style="display:flex;gap:6px;align-items:stretch">
-            <pre id="install-cmd" style="flex:1;background:var(--bg-card);padding:10px;border-radius:6px;font-size:11px;overflow-x:auto;line-height:1.7;margin:0;white-space:pre-wrap;word-break:break-all">curl -sL "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/releases/download/v1.0.0/theme-${themeId}.zip" -o /tmp/t.zip && unzip -o /tmp/t.zip -d /tmp/tt && cp /tmp/tt/theme.json ~/.codex/codex-skin-workshop/assets/ && cp /tmp/tt/*.jpg ~/.codex/codex-skin-workshop/assets/ && rm -rf /tmp/t.zip /tmp/tt && open ~/.codex/codex-skin-workshop/Start\ Codex\ Skin\ Workshop.command</pre>
-            <button onclick="navigator.clipboard.writeText(document.getElementById('install-cmd').textContent);this.textContent='✅ 已复制'" style="flex-shrink:0;padding:8px 12px;background:var(--primary);border:none;border-radius:6px;color:#fff;font-size:12px;cursor:pointer;font-family:inherit">复制</button>
+            <pre id="install-cmd" style="flex:1;background:var(--bg-card);padding:12px;border-radius:6px;font-size:11px;overflow-x:auto;line-height:1.8;margin:0;white-space:pre-wrap;word-break:break-all">${installCmd}</pre>
+            <button onclick="navigator.clipboard.writeText(document.getElementById('install-cmd').textContent);this.textContent='✅ 已复制';setTimeout(()=>this.textContent='复制',2000)" style="flex-shrink:0;padding:8px 14px;background:var(--primary);border:none;border-radius:6px;color:#fff;font-size:12px;cursor:pointer;font-family:inherit">复制</button>
           </div>
+          <p style="margin-top:8px;font-size:12px;color:var(--text-muted);line-height:1.5">
+            ⚡ 这条命令会自动检测工具是否已安装，首次使用会先下载工具，再安装主题，最后自动重启皮肤。
+          </p>
         </div>
         <div style="padding:14px;background:rgba(244,114,182,0.08);border-radius:8px;border:1px solid rgba(244,114,182,0.2)">
-          <p style="font-size:13px;font-weight:600;color:var(--accent);margin-bottom:6px">📦 方式二：下载后手动安装</p>
-          <p style="font-size:12px;color:var(--text-muted);margin-bottom:4px">
-            1. 解压下载的 <code>theme-${themeId}.zip</code><br>
-            2. 双击文件夹中的 <code>双击安装.command</code><br>
+          <p style="font-size:13px;font-weight:600;color:var(--accent);margin-bottom:6px">📦 或者下载 zip 手动安装</p>
+          <p style="font-size:12px;color:var(--text-muted);margin-bottom:4px;line-height:1.6">
+            1. 下载 <code>theme-${themeId}.zip</code> 并解压<br>
+            2. 双击 <code>双击安装.command</code><br>
             3. Mac 首次需去「系统设置 → 隐私与安全性」→ 点「仍要打开」
           </p>
         </div>
-        <p style="margin-top:16px;font-size:12px;color:var(--text-muted)">
-          💡 首次使用才需下载工具，之后只需替换主题文件即可
-        </p>
       </div>
     `;
     overlay.addEventListener('click', (e) => {
