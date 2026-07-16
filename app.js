@@ -100,7 +100,7 @@
     const zipUrl = THEME_ZIP_URL + themeId + '.zip';
     const link = document.createElement('a');
     link.href = zipUrl;
-    link.download = themeId + '.zip';
+    link.download = 'theme-' + themeId + '.zip';
     link.click();
     setTimeout(() => showGuide(themeId, themeName), 500);
   };
@@ -137,7 +137,7 @@
             <div style="padding:12px;background:rgba(244,114,182,0.08);border-radius:6px;border:1px solid rgba(244,114,182,0.2)">
               <p style="font-size:13px;font-weight:600;color:var(--accent)">方式二：手动安装</p>
               <p style="font-size:12px;color:var(--text-muted);margin-top:4px">打开终端，执行：</p>
-              <pre style="background:var(--bg-card);padding:8px;border-radius:4px;font-size:12px;margin-top:4px;overflow-x:auto;line-height:1.7">cd ~/Downloads/${themeId}
+              <pre style="background:var(--bg-card);padding:8px;border-radius:4px;font-size:12px;margin-top:4px;overflow-x:auto;line-height:1.7">cd ~/Downloads/theme-${themeId}
 cp theme.json ~/.codex/codex-skin-workshop/assets/
 cp *.jpg ~/.codex/codex-skin-workshop/assets/</pre>
             </div>
