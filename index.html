@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codex Skin Workshop — AI 编程皮肤工坊</title>
+  <meta name="description" content="给 Codex 桌面端换一张会呼吸的脸。免费主题下载，创意工坊社区。">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">🎨</span>
+        <span class="logo-text">Codex Skin <strong>Workshop</strong></span>
+      </div>
+      <nav class="nav">
+        <a href="#gallery" class="nav-link">主题库</a>
+        <a href="#submit" class="nav-link">提交主题</a>
+        <a href="#about" class="nav-link">关于</a>
+        <a href="https://github.com/Ryan-J-MAX/Codex-Skin-Workshop" class="nav-link github-link" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">🔥 首个 Codex 桌面端主题工坊</div>
+      <h1 class="hero-title">给你的 Codex<br>换一张<span class="gradient-text">会呼吸的脸</span></h1>
+      <p class="hero-subtitle">
+        一张图，一种心情。挑一个主题，让你的 AI 编程助手不再是冰冷的工业灰。<br>
+        全免费 · 开源 · 社区驱动
+      </p>
+      <div class="hero-actions">
+        <a href="#gallery" class="btn btn-primary">浏览主题库</a>
+        <a href="#submit" class="btn btn-outline">提交你的主题</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number" id="stat-themes">12</span>
+          <span class="stat-label">主题</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" id="stat-downloads">1.2k</span>
+          <span class="stat-label">下载</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" id="stat-artists">8</span>
+          <span class="stat-label">创作者</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">🎨 主题库</h2>
+        <div class="section-actions">
+          <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="dark">暗色系</button>
+            <button class="filter-btn" data-filter="light">亮色系</button>
+            <button class="filter-btn" data-filter="anime">二次元</button>
+            <button class="filter-btn" data-filter="minimal">极简</button>
+          </div>
+        </div>
+      </div>
+      <div class="theme-grid" id="theme-grid">
+        <!-- JS 动态渲染 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Submit -->
+  <section id="submit" class="submit">
+    <div class="container">
+      <div class="submit-card">
+        <h2 class="section-title">🚀 提交你的主题</h2>
+        <p class="submit-desc">
+          有好图想分享？通过 GitHub Issues 提交，审核通过后上线到主题库。
+        </p>
+        <div class="submit-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>准备素材</h3>
+              <p>一张 1920×1080 的壁纸图（JPG/PNG），一个主题名称</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>测试效果</h3>
+              <p>用 <a href="https://github.com/Ryan-J-MAX/Codex-Skin-Workshop" target="_blank">Codex Skin Workshop</a> 工具本地测试</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>提交 Issue</h3>
+              <p>在 GitHub 提交 Issue，附上预览图和主题名</p>
+            </div>
+          </div>
+        </div>
+        <a href="https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/issues/new?title=%5B%E4%B8%BB%E9%A2%98%E6%8F%90%E4%BA%A4%5D%20%E4%BD%A0%E7%9A%84%E4%B8%BB%E9%A2%98%E5%90%8D%E7%A7%B0&body=%23%23%20%E4%B8%BB%E9%A2%98%E5%90%8D%E7%A7%B0%0A%0A%23%23%20%E9%A2%84%E8%A7%88%E5%9B%BE%0A%0A%23%23%20%E9%A3%8E%E6%A0%BC%E6%8F%8F%E8%BF%B0%0A%0A%23%23%20%E4%BD%9C%E8%80%85%0A%0A" class="btn btn-primary" target="_blank">在 GitHub 提交主题</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support -->
+  <section id="support" class="support">
+    <div class="container">
+      <div class="support-card">
+        <div class="support-content">
+          <h2>❤️ 支持工坊</h2>
+          <p>如果这些主题让你的 Codex 更好看了，请我喝杯咖啡 ☕</p>
+          <div class="support-options">
+            <a href="#" class="btn btn-support" id="btn-sponsor">
+              <span class="support-icon">💛</span> GitHub Sponsor
+            </a>
+            <a href="#" class="btn btn-support" id="btn-buymeacoffee">
+              <span class="support-icon">☕</span> Buy Me a Coffee
+            </a>
+          </div>
+        </div>
+        <div class="support-premium">
+          <h3>🔮 即将推出</h3>
+          <p>付费主题市场 · 创作者分成 · 一键安装</p>
+          <span class="premium-badge">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="logo-icon">🎨</span>
+          <span>Codex Skin Workshop</span>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/Ryan-J-MAX/Codex-Skin-Workshop" target="_blank">GitHub</a>
+          <a href="#about">关于</a>
+          <a href="https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/blob/main/macos/LICENSE" target="_blank">MIT License</a>
+        </div>
+      </div>
+      <p class="footer-note">非 OpenAI 官方产品 · Codex 及相关权利归其权利人</p>
+    </div>
+  </footer>
+
+  <script src="themes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
