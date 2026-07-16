@@ -5,12 +5,12 @@
 
 const themes = [
   {
-    id: "neon-noir",
-    name: "霓虹暗夜",
+    id: "cyberpunk-city",
+    name: "赛博之城",
     author: "Ryan",
-    description: "深紫暗黑底色，霓虹光效，代码像在赛博城市里飞行",
+    description: "赛博朋克城市夜景，霓虹灯管，代码在数字街道间穿行",
     tags: ["dark", "cyberpunk"],
-    preview: "assets/themes/neon-noir.jpg",
+    preview: "assets/themes/cyberpunk-city.jpg",
     download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
     downloads: 328,
     featured: true
@@ -26,14 +26,54 @@ const themes = [
     downloads: 256
   },
   {
-    id: "midnight-ocean",
+    id: "ocean-deep",
     name: "深海暗流",
     author: "Ryan",
     description: "深蓝海洋渐变，安静专注的氛围",
     tags: ["dark", "minimal"],
-    preview: "assets/themes/midnight-ocean.jpg",
+    preview: "assets/themes/ocean-deep.jpg",
     download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
     downloads: 189
+  },
+  {
+    id: "aurora-night",
+    name: "极光之夜",
+    author: "Ryan",
+    description: "北极光在天际舞动，紫绿交织的梦幻天空",
+    tags: ["dark", "minimal"],
+    preview: "assets/themes/aurora-night.jpg",
+    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    downloads: 145
+  },
+  {
+    id: "zen-mountain",
+    name: "云雾山居",
+    author: "Ryan",
+    description: "水墨山水，远山云雾，写代码如隐居",
+    tags: ["light", "minimal"],
+    preview: "assets/themes/zen-mountain.jpg",
+    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    downloads: 112
+  },
+  {
+    id: "galaxy-space",
+    name: "银河核心",
+    author: "Ryan",
+    description: "深空星云，紫色银河，宇宙级沉浸感",
+    tags: ["dark", "minimal"],
+    preview: "assets/themes/galaxy-space.jpg",
+    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    downloads: 176
+  },
+  {
+    id: "neon-noir",
+    name: "霓虹暗夜",
+    author: "Ryan",
+    description: "深紫暗黑底色，霓虹光效，代码像在赛博城市里飞行",
+    tags: ["dark", "cyberpunk"],
+    preview: "assets/themes/neon-noir.jpg",
+    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    downloads: 267
   },
   {
     id: "sunset-gold",
@@ -43,67 +83,7 @@ const themes = [
     tags: ["light", "minimal"],
     preview: "assets/themes/sunset-gold.jpg",
     download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
-    downloads: 145
-  },
-  {
-    id: "cyber-samurai",
-    name: "赛博武士",
-    author: "Ryan",
-    description: "霓虹 + 武士剪影，Cyberpunk 2077 风格",
-    tags: ["dark", "cyberpunk", "anime"],
-    preview: "assets/themes/cyber-samurai.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
-    downloads: 210
-  },
-  {
-    id: "zen-garden",
-    name: "枯山水",
-    author: "Ryan",
-    description: "日式禅意，极简侘寂风，专注冥想式编程",
-    tags: ["light", "minimal"],
-    preview: "assets/themes/zen-garden.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
-    downloads: 98
-  },
-  {
-    id: "vaporwave",
-    name: "蒸汽波",
-    author: "Ryan",
-    description: "复古合成波，粉色 + 青色，自带 BGM 的编码体验",
-    tags: ["dark", "cyberpunk"],
-    preview: "assets/themes/vaporwave.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
-    downloads: 267
-  },
-  {
-    id: "mountain-mist",
-    name: "云雾山居",
-    author: "Ryan",
-    description: "水墨山水，远山云雾，写代码如隐居",
-    tags: ["light", "minimal"],
-    preview: "assets/themes/mountain-mist.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
-    downloads: 112
-  },
-  {
-    id: "galaxy-core",
-    name: "银河核心",
-    author: "Ryan",
-    description: "深空星云，紫色银河，宇宙级沉浸感",
-    tags: ["dark", "minimal"],
-    preview: "assets/themes/galaxy-core.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
-    downloads: 176
-  },
-  {
-    id: "autumn-maple",
-    name: "枫林晚",
-    author: "Ryan",
-    description: "暖秋枫叶红，写代码也要有温度",
-    tags: ["light", "minimal"],
-    preview: "assets/themes/autumn-maple.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
-    downloads: 89
+    downloads: 134
   },
   {
     id: "hacker-matrix",
@@ -124,5 +104,25 @@ const themes = [
     preview: "assets/themes/sakura-night.jpg",
     download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
     downloads: 134
+  },
+  {
+    id: "vaporwave",
+    name: "蒸汽波",
+    author: "Ryan",
+    description: "复古合成波，粉色 + 青色，自带 BGM 的编码体验",
+    tags: ["dark", "cyberpunk"],
+    preview: "assets/themes/vaporwave.jpg",
+    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    downloads: 210
+  },
+  {
+    id: "autumn-maple",
+    name: "枫林晚",
+    author: "Ryan",
+    description: "暖秋枫叶红，写代码也要有温度",
+    tags: ["light", "minimal"],
+    preview: "assets/themes/autumn-maple.jpg",
+    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    downloads: 89
   }
 ];
