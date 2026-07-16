@@ -6,6 +6,9 @@
 // 安装脚本下载链接 (Mac)
 const INSTALL_SCRIPT_URL = 'https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/releases/download/v1.0.0/Codex-Skin-Workshop.zip';
 
+// 主题 zip 包下载链接模板
+const THEME_ZIP_URL = 'https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/releases/download/v1.0.0/theme-';
+
 const themes = [
   {
     id: "cyberpunk-city",
