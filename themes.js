@@ -10,7 +10,8 @@ const INSTALL_SCRIPT_URL = 'https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/re
 const THEME_ZIP_URL = 'https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/releases/download/v1.0.0/theme-';
 
 // 图片版本号，更新时递增
-const IMG_VER = '4';
+const IMG_VER = '5';
+const IMG_BASE = 'https://raw.githubusercontent.com/Ryan-J-MAX/codex-skin-marketplace/main/assets/img/';
 
 const themes = [
   {
@@ -19,7 +20,7 @@ const themes = [
     author: "Ryan",
     description: "赛博朋克城市夜景，霓虹灯管，代码在数字街道间穿行",
     tags: ["dark", "cyberpunk"],
-    preview: "assets/img/cyberpunk-city.jpg?v=" + IMG_VER,
+    preview: IMG_BASE + "cyberpunk-city.jpg",
     download: INSTALL_SCRIPT_URL,
     downloads: 328,
     featured: true
@@ -30,7 +31,7 @@ const themes = [
     author: "Ryan",
     description: "淡粉樱花背景，适合春天写代码",
     tags: ["light", "anime", "minimal"],
-    preview: "assets/img/cherry-blossom.jpg?v=" + IMG_VER,
+    preview: IMG_BASE + "cherry-blossom.jpg",
     download: INSTALL_SCRIPT_URL,
     downloads: 256
   },
@@ -40,7 +41,7 @@ const themes = [
     author: "Ryan",
     description: "深蓝海洋渐变，安静专注的氛围",
     tags: ["dark", "minimal"],
-    preview: "assets/img/ocean-deep.jpg?v=" + IMG_VER,
+    preview: IMG_BASE + "ocean-deep.jpg",
     download: INSTALL_SCRIPT_URL,
     downloads: 189
   },
@@ -50,7 +51,7 @@ const themes = [
     author: "Ryan",
     description: "北极光在天际舞动，紫绿交织的梦幻天空",
     tags: ["dark", "minimal"],
-    preview: "assets/img/aurora-night.jpg?v=" + IMG_VER,
+    preview: IMG_BASE + "aurora-night.jpg",
     download: INSTALL_SCRIPT_URL,
     downloads: 145
   },
@@ -60,7 +61,7 @@ const themes = [
     author: "Ryan",
     description: "水墨山水，远山云雾，写代码如隐居",
     tags: ["light", "minimal"],
-    preview: "assets/img/zen-mountain.jpg?v=" + IMG_VER,
+    preview: IMG_BASE + "zen-mountain.jpg",
     download: INSTALL_SCRIPT_URL,
     downloads: 112
   },
@@ -70,7 +71,7 @@ const themes = [
     author: "Ryan",
     description: "深空星云，紫色银河，宇宙级沉浸感",
     tags: ["dark", "minimal"],
-    preview: "assets/img/galaxy-space.jpg?v=" + IMG_VER,
+    preview: IMG_BASE + "galaxy-space.jpg",
     download: INSTALL_SCRIPT_URL,
     downloads: 176
   },
@@ -80,7 +81,7 @@ const themes = [
     author: "Ryan",
     description: "深紫暗黑底色，霓虹光效，代码像在赛博城市里飞行",
     tags: ["dark", "cyberpunk"],
-    preview: "assets/img/neon-noir.jpg?v=" + IMG_VER,
+    preview: IMG_BASE + "neon-noir.jpg",
     download: INSTALL_SCRIPT_URL,
     downloads: 267
   },
@@ -90,7 +91,7 @@ const themes = [
     author: "Ryan",
     description: "暖橙金色渐变，黄昏时分的温暖色调",
     tags: ["light", "minimal"],
-    preview: "assets/img/sunset-gold.jpg?v=" + IMG_VER,
+    preview: IMG_BASE + "sunset-gold.jpg",
     download: INSTALL_SCRIPT_URL,
     downloads: 134
   },
@@ -100,7 +101,7 @@ const themes = [
     author: "Ryan",
     description: "经典绿色代码雨，Matrix 风格",
     tags: ["dark", "cyberpunk"],
-    preview: "assets/img/hacker-matrix.jpg?v=" + IMG_VER,
+    preview: IMG_BASE + "hacker-matrix.jpg",
     download: INSTALL_SCRIPT_URL,
     downloads: 312
   },
@@ -110,7 +111,7 @@ const themes = [
     author: "Ryan",
     description: "暗夜樱花，深蓝底色配粉色花瓣",
     tags: ["dark", "anime"],
-    preview: "assets/img/sakura-night.jpg?v=" + IMG_VER,
+    preview: IMG_BASE + "sakura-night.jpg",
     download: INSTALL_SCRIPT_URL,
     downloads: 134
   },
@@ -120,7 +121,7 @@ const themes = [
     author: "Ryan",
     description: "复古合成波，粉色 + 青色，自带 BGM 的编码体验",
     tags: ["dark", "cyberpunk"],
-    preview: "assets/img/vaporwave.jpg?v=" + IMG_VER,
+    preview: IMG_BASE + "vaporwave.jpg",
     download: INSTALL_SCRIPT_URL,
     downloads: 210
   },
@@ -130,7 +131,7 @@ const themes = [
     author: "Ryan",
     description: "暖秋枫叶红，写代码也要有温度",
     tags: ["light", "minimal"],
-    preview: "assets/img/autumn-maple.jpg?v=" + IMG_VER,
+    preview: IMG_BASE + "autumn-maple.jpg",
     download: INSTALL_SCRIPT_URL,
     downloads: 89
   }
