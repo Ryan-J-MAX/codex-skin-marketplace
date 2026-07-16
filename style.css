@@ -474,6 +474,71 @@ body {
   border-color: var(--primary);
 }
 
+/* How to Use */
+.howto {
+  padding: 40px 0;
+}
+
+.howto-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 40px;
+  text-align: center;
+}
+
+.howto-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 28px 0;
+}
+
+.howto-step {
+  padding: 20px;
+  background: rgba(99, 102, 241, 0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.howto-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.howto-step h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.howto-step p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.howto-step code {
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.howto-note {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.howto-note code {
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
 /* Submit */
 .submit {
   padding: 60px 0;
@@ -666,4 +731,64 @@ body {
   .nav {
     gap: 12px;
   }
+}
+
+/* Guide Modal */
+.guide-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  max-width: 520px;
+  width: 100%;
+}
+
+.guide-modal h3 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.guide-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.guide-step {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.guide-num {
+  width: 28px;
+  height: 28px;
+  background: var(--gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.guide-step strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.guide-step p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.guide-step code {
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 12px;
 }

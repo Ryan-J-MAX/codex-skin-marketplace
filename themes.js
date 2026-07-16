@@ -3,6 +3,9 @@
 // ========================================
 // 添加新主题只需在这里加一条记录
 
+// 安装脚本下载链接 (Mac)
+const INSTALL_SCRIPT_URL = 'https://raw.githubusercontent.com/Ryan-J-MAX/Codex-Skin-Workshop/main/macos/Install%20Codex%20Skin%20Workshop.command';
+
 const themes = [
   {
     id: "cyberpunk-city",
@@ -11,7 +14,7 @@ const themes = [
     description: "赛博朋克城市夜景，霓虹灯管，代码在数字街道间穿行",
     tags: ["dark", "cyberpunk"],
     preview: "assets/themes/cyberpunk-city.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    download: INSTALL_SCRIPT_URL,
     downloads: 328,
     featured: true
   },
@@ -22,7 +25,7 @@ const themes = [
     description: "淡粉樱花背景，适合春天写代码",
     tags: ["light", "anime", "minimal"],
     preview: "assets/themes/cherry-blossom.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    download: INSTALL_SCRIPT_URL,
     downloads: 256
   },
   {
@@ -32,7 +35,7 @@ const themes = [
     description: "深蓝海洋渐变，安静专注的氛围",
     tags: ["dark", "minimal"],
     preview: "assets/themes/ocean-deep.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    download: INSTALL_SCRIPT_URL,
     downloads: 189
   },
   {
@@ -42,7 +45,7 @@ const themes = [
     description: "北极光在天际舞动，紫绿交织的梦幻天空",
     tags: ["dark", "minimal"],
     preview: "assets/themes/aurora-night.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    download: INSTALL_SCRIPT_URL,
     downloads: 145
   },
   {
@@ -52,7 +55,7 @@ const themes = [
     description: "水墨山水，远山云雾，写代码如隐居",
     tags: ["light", "minimal"],
     preview: "assets/themes/zen-mountain.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    download: INSTALL_SCRIPT_URL,
     downloads: 112
   },
   {
@@ -62,7 +65,7 @@ const themes = [
     description: "深空星云，紫色银河，宇宙级沉浸感",
     tags: ["dark", "minimal"],
     preview: "assets/themes/galaxy-space.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    download: INSTALL_SCRIPT_URL,
     downloads: 176
   },
   {
@@ -72,7 +75,7 @@ const themes = [
     description: "深紫暗黑底色，霓虹光效，代码像在赛博城市里飞行",
     tags: ["dark", "cyberpunk"],
     preview: "assets/themes/neon-noir.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    download: INSTALL_SCRIPT_URL,
     downloads: 267
   },
   {
@@ -82,7 +85,7 @@ const themes = [
     description: "暖橙金色渐变，黄昏时分的温暖色调",
     tags: ["light", "minimal"],
     preview: "assets/themes/sunset-gold.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    download: INSTALL_SCRIPT_URL,
     downloads: 134
   },
   {
@@ -92,7 +95,7 @@ const themes = [
     description: "经典绿色代码雨，Matrix 风格",
     tags: ["dark", "cyberpunk"],
     preview: "assets/themes/hacker-matrix.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    download: INSTALL_SCRIPT_URL,
     downloads: 312
   },
   {
@@ -102,7 +105,7 @@ const themes = [
     description: "暗夜樱花，深蓝底色配粉色花瓣",
     tags: ["dark", "anime"],
     preview: "assets/themes/sakura-night.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    download: INSTALL_SCRIPT_URL,
     downloads: 134
   },
   {
@@ -112,7 +115,7 @@ const themes = [
     description: "复古合成波，粉色 + 青色，自带 BGM 的编码体验",
     tags: ["dark", "cyberpunk"],
     preview: "assets/themes/vaporwave.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    download: INSTALL_SCRIPT_URL,
     downloads: 210
   },
   {
@@ -122,7 +125,7 @@ const themes = [
     description: "暖秋枫叶红，写代码也要有温度",
     tags: ["light", "minimal"],
     preview: "assets/themes/autumn-maple.jpg",
-    download: "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop",
+    download: INSTALL_SCRIPT_URL,
     downloads: 89
   }
 ];
