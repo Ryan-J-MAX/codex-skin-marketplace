@@ -110,7 +110,7 @@
     overlay.className = 'modal-overlay';
 
     // 生成安装命令：先确保工具存在，再安装主题
-    const installCmd = `[ -d ~/.codex/codex-skin-workshop ] || (curl -sL "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/releases/download/v1.0.0/Codex-Skin-Workshop.zip" -o /tmp/csw.zip && unzip -o /tmp/csw.zip -d ~/.codex/codex-skin-workshop/ > /dev/null 2>&1 && rm /tmp/csw.zip) && curl -sL "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/releases/download/v1.0.0/theme-${themeId}.zip" -o /tmp/t.zip && unzip -o /tmp/t.zip -d /tmp/tt > /dev/null 2>&1 && cp /tmp/tt/theme.json ~/.codex/codex-skin-workshop/assets/ && cp /tmp/tt/*.jpg ~/.codex/codex-skin-workshop/assets/ && rm -rf /tmp/t.zip /tmp/tt && open ~/.codex/codex-skin-workshop/Start\ Codex\ Skin\ Workshop.command`;
+    const installCmd = `[ -d ~/.codex/codex-skin-workshop ] || (curl -sL "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/releases/download/v1.0.0/Codex-Skin-Workshop.zip" -o /tmp/csw.zip && unzip -o /tmp/csw.zip -d ~/.codex/codex-skin-workshop/ > /dev/null 2>&1 && rm /tmp/csw.zip) && curl -sL "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/releases/download/v1.0.0/theme-${themeId}.zip" -o /tmp/t.zip && unzip -o /tmp/t.zip -d /tmp/tt > /dev/null 2>&1 && cp /tmp/tt/theme.json ~/.codex/codex-skin-workshop/assets/ && cp /tmp/tt/*.jpg ~/.codex/codex-skin-workshop/assets/ && rm -rf /tmp/t.zip /tmp/tt && open -a Terminal "$HOME/.codex/codex-skin-workshop/Start Codex Skin Workshop.command"`;
 
     overlay.innerHTML = `
       <button class="modal-close" onclick="this.parentElement.remove()">✕</button>
