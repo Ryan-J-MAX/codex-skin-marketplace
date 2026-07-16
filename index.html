@@ -84,29 +84,35 @@
   <section id="howto" class="howto">
     <div class="container">
       <div class="howto-card">
-        <h2 class="section-title">📖 三步使用</h2>
+        <h2 class="section-title">📖 使用指南</h2>
         <div class="howto-steps">
           <div class="howto-step">
             <div class="howto-icon">⬇️</div>
-            <h3>下载安装脚本</h3>
-            <p>点击主题卡片上的「下载安装脚本」，得到一个 <code>.zip</code> 文件，双击解压</p>
+            <h3>下载主题</h3>
+            <p>点击主题卡片上的「下载主题」，得到 <code>xxx.zip</code> 文件，双击解压</p>
           </div>
           <div class="howto-step">
-            <div class="howto-icon">🖱️</div>
-            <h3>双击运行</h3>
-            <p>在 Finder 双击下载的文件，Mac 会提示「无法验证开发者」</p>
+            <div class="howto-icon">🚀</div>
+            <h3>一键安装</h3>
+            <p>解压后双击 <code>Install.command</code>，自动完成安装</p>
             <p style="margin-top:6px;font-size:12px;color:var(--accent)">
-              打开「系统设置 → 隐私与安全性」→ 点击「仍要打开」
+              Mac 首次运行需去「系统设置 → 隐私与安全性」→ 点击「仍要打开」
             </p>
           </div>
           <div class="howto-step">
-            <div class="howto-icon">🖼️</div>
-            <h3>选图搞定</h3>
-            <p>脚本会自动安装并弹出文件选择器，选一张你喜欢的壁纸即可生效</p>
+            <div class="howto-icon">🖥️</div>
+            <h3>手动安装</h3>
+            <p>打开终端执行：</p>
+            <pre style="background:var(--bg);padding:8px;border-radius:4px;font-size:11px;margin-top:4px;line-height:1.6;text-align:left">cd ~/Downloads/xxx
+cp theme.json ~/.codex/codex-skin-workshop/assets/
+cp *.jpg ~/.codex/codex-skin-workshop/assets/</pre>
           </div>
         </div>
         <p class="howto-note">
-          想换图？重新双击运行，选新图即可。<br>
+          安装后双击桌面 <code>Codex Skin Workshop.command</code> 重启生效<br>
+          首次使用？先下载 <a href="https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/releases/download/v1.0.0/Codex-Skin-Workshop.zip" target="_blank">Codex Skin Workshop</a> 安装工具
+        </p>
+      </div>
           想恢复原样？在项目目录双击 <code>Restore Codex Skin Workshop.command</code>
         </p>
       </div>

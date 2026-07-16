@@ -119,23 +119,32 @@
           <div class="guide-step">
             <span class="guide-num">1</span>
             <div>
-              <strong>解压并替换</strong>
-              <p>在 Finder 双击下载的 <code>.zip</code> 解压，然后打开终端执行：</p>
-              <pre style="background:var(--bg);padding:10px;border-radius:6px;font-size:12px;margin-top:6px;overflow-x:auto;line-height:1.8">cd ~/Downloads/${themeId}
+              <strong>解压</strong>
+              <p>在 Finder 双击下载的 <code>${themeId}.zip</code> 自动解压</p>
+            </div>
+          </div>
+        </div>
+        <div style="margin:16px 0;padding:16px;background:var(--bg);border-radius:8px;border:1px solid var(--border)">
+          <p style="font-size:14px;font-weight:600;margin-bottom:10px">选择安装方式：</p>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="padding:12px;background:rgba(99,102,241,0.08);border-radius:6px;border:1px solid rgba(99,102,241,0.2)">
+              <p style="font-size:13px;font-weight:600;color:var(--primary)">方式一：一键安装（推荐）</p>
+              <p style="font-size:12px;color:var(--text-muted);margin-top:4px">
+                在解压后的文件夹中双击 <code>Install.command</code><br>
+                Mac 首次运行需去「系统设置 → 隐私与安全性」→ 点击「仍要打开」
+              </p>
+            </div>
+            <div style="padding:12px;background:rgba(244,114,182,0.08);border-radius:6px;border:1px solid rgba(244,114,182,0.2)">
+              <p style="font-size:13px;font-weight:600;color:var(--accent)">方式二：手动安装</p>
+              <p style="font-size:12px;color:var(--text-muted);margin-top:4px">打开终端，执行：</p>
+              <pre style="background:var(--bg-card);padding:8px;border-radius:4px;font-size:12px;margin-top:4px;overflow-x:auto;line-height:1.7">cd ~/Downloads/${themeId}
 cp theme.json ~/.codex/codex-skin-workshop/assets/
 cp *.jpg ~/.codex/codex-skin-workshop/assets/</pre>
             </div>
           </div>
-          <div class="guide-step">
-            <span class="guide-num">2</span>
-            <div>
-              <strong>重启生效</strong>
-              <p>双击桌面 <code>Codex Skin Workshop.command</code> 即可看到新主题</p>
-            </div>
-          </div>
         </div>
-        <p style="margin-top:16px;font-size:12px;color:var(--text-muted)">
-          首次使用？先 <a href="${INSTALL_SCRIPT_URL}" style="color:var(--primary)" target="_blank">下载安装 Codex Skin Workshop</a>
+        <p style="font-size:12px;color:var(--text-muted)">
+          完成后双击桌面 <code>Codex Skin Workshop.command</code> 重启生效
         </p>
       </div>
     `;
