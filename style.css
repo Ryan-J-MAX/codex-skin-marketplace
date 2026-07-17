@@ -532,15 +532,16 @@ body::before {
 }
 
 .btn-preview {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e0e0f0;
 }
 
 .btn-preview:hover {
   border-color: var(--primary);
-  color: var(--primary-light);
-  background: rgba(99, 102, 241, 0.06);
+  color: #fff;
+  background: rgba(99, 102, 241, 0.3);
 }
 
 /* ========== Modal ========== */

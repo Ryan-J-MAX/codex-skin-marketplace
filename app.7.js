@@ -1,5 +1,5 @@
 // ========================================
-// Codex Skin Workshop — App Logic
+// Codex Skin Workshop — App Logic v2
 // ========================================
 
 (function () {
@@ -19,7 +19,7 @@
       : themes.filter(t => t.tags.includes(filter));
 
     grid.innerHTML = filtered.map(theme => `
-      <div class="theme-card" data-id="${theme.id}">
+      <div class="theme-card${theme.featured ? ' theme-card-featured' : ''}" data-id="${theme.id}">
         <img
           class="theme-preview"
           src="${theme.preview}"
@@ -29,19 +29,21 @@
         >
         <div class="theme-info">
           <div class="theme-name">
-            ${theme.featured ? '⭐ ' : ''}${theme.name}
+            ${theme.name}
+            ${theme.featured ? '<span class="theme-featured-badge">⭐ 精选</span>' : ''}
           </div>
           <div class="theme-author">by ${theme.author}</div>
+          ${theme.description ? `<div class="theme-description">${theme.description}</div>` : ''}
           <div class="theme-tags">
             ${theme.tags.map(tag => `<span class="theme-tag">${tag}</span>`).join('')}
           </div>
           <div class="theme-actions">
             <button class="btn-download" onclick="downloadTheme('${theme.id}', '${theme.name}')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               下载主题
             </button>
             <button class="btn-preview" onclick="openPreview('${theme.preview}', '${theme.name}')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/></svg>
               预览
             </button>
           </div>
@@ -95,7 +97,6 @@
     document.addEventListener('keydown', onEsc);
   };
 
-  // 下载主题 zip 包
   window.downloadTheme = function (themeId, themeName) {
     const zipUrl = THEME_ZIP_URL + themeId + '.zip';
     const link = document.createElement('a');
@@ -109,33 +110,34 @@
     const overlay = document.createElement('div');
     overlay.className = 'modal-overlay';
 
-    // 生成安装命令：先确保工具存在，再安装主题
     const installCmd = `if [ ! -f "$HOME/.codex/codex-skin-workshop/Start Codex Skin Workshop.command" ]; then mkdir -p "$HOME/.codex/codex-skin-workshop" && curl -sL "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/releases/download/v1.0.0/Codex-Skin-Workshop.zip" -o /tmp/csw.zip && unzip -o /tmp/csw.zip -d "$HOME/.codex/codex-skin-workshop/" > /dev/null 2>&1 && rm /tmp/csw.zip && chmod +x "$HOME/.codex/codex-skin-workshop/"*.command "$HOME/.codex/codex-skin-workshop/scripts/"*.sh 2>/dev/null; fi && curl -sL "https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/releases/download/v1.0.0/theme-${themeId}.zip" -o /tmp/t.zip && unzip -o /tmp/t.zip -d /tmp/tt > /dev/null 2>&1 && cp /tmp/tt/theme.json "$HOME/.codex/codex-skin-workshop/assets/" && cp /tmp/tt/*.jpg "$HOME/.codex/codex-skin-workshop/assets/" && rm -rf /tmp/t.zip /tmp/tt && open -a Terminal "$HOME/.codex/codex-skin-workshop/Start Codex Skin Workshop.command"`;
 
     overlay.innerHTML = `
       <button class="modal-close" onclick="this.parentElement.remove()">✕</button>
       <div class="guide-modal">
-        <h3>✅ 即将安装 ${themeName}</h3>
-        <p style="margin:8px 0 16px;color:var(--text-muted);font-size:13px">
-          复制下面一行命令，粘贴到终端（Cmd+空格 → terminal）回车，自动完成所有步骤
+        <h3>✅ 即将安装「${themeName}」</h3>
+        <p style="margin:8px 0 20px;color:var(--text-secondary);font-size:14px;line-height:1.5">
+          复制下面一行命令，粘贴到终端按回车，自动完成所有操作
         </p>
-        <div style="margin-bottom:16px;padding:14px;background:rgba(99,102,241,0.08);border-radius:8px;border:1px solid rgba(99,102,241,0.3)">
-          <div style="display:flex;gap:6px;align-items:stretch">
-            <pre id="install-cmd" style="flex:1;background:var(--bg-card);padding:12px;border-radius:6px;font-size:11px;overflow-x:auto;line-height:1.8;margin:0;white-space:pre-wrap;word-break:break-all">${installCmd}</pre>
-            <button onclick="navigator.clipboard.writeText(document.getElementById('install-cmd').textContent);this.textContent='✅ 已复制';setTimeout(()=>this.textContent='复制',2000)" style="flex-shrink:0;padding:8px 14px;background:var(--primary);border:none;border-radius:6px;color:#fff;font-size:12px;cursor:pointer;font-family:inherit">复制</button>
+
+        <div style="margin-bottom:20px;padding:16px;background:rgba(99,102,241,0.06);border-radius:10px;border:1px solid rgba(99,102,241,0.2)">
+          <div style="display:flex;gap:8px;align-items:stretch">
+            <pre id="install-cmd" style="flex:1;background:var(--bg);padding:14px;border-radius:8px;font-size:12px;overflow-x:auto;line-height:1.8;margin:0;white-space:pre-wrap;word-break:break-all;color:var(--text-secondary);border:1px solid var(--border)">${installCmd}</pre>
+            <button onclick="navigator.clipboard.writeText(document.getElementById('install-cmd').textContent);this.textContent='✅ 已复制';setTimeout(()=>this.textContent='复制',2000)" style="flex-shrink:0;padding:10px 18px;background:var(--primary);border:none;border-radius:8px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s">复制</button>
           </div>
-          <p style="margin-top:8px;font-size:12px;color:var(--text-muted);line-height:1.5">
-            ⚡ 这条命令会自动检测工具是否已安装，首次使用会先下载工具，再安装主题，最后自动重启皮肤。
+          <p style="margin-top:10px;font-size:12px;color:var(--text-muted);line-height:1.6">
+            ⚡ 首次使用会自动下载工具，已有工具则直接安装主题
           </p>
         </div>
-        <div style="padding:14px;background:rgba(244,114,182,0.08);border-radius:8px;border:1px solid rgba(244,114,182,0.2)">
-          <p style="font-size:13px;font-weight:600;color:var(--accent);margin-bottom:6px">📦 或者下载 zip 手动安装</p>
-          <p style="font-size:12px;color:var(--text-muted);margin-bottom:4px;line-height:1.6">
+
+        <details style="padding:16px;background:rgba(244,114,182,0.06);border-radius:10px;border:1px solid rgba(244,114,182,0.15);cursor:pointer">
+          <summary style="font-size:13px;font-weight:600;color:var(--accent);cursor:pointer">📦 或者下载 zip 手动安装</summary>
+          <div style="margin-top:10px;font-size:12px;color:var(--text-muted);line-height:1.8">
             1. 下载 <code>theme-${themeId}.zip</code> 并解压<br>
             2. 双击 <code>双击安装.command</code><br>
             3. Mac 首次需去「系统设置 → 隐私与安全性」→ 点「仍要打开」
-          </p>
-        </div>
+          </div>
+        </details>
       </div>
     `;
     overlay.addEventListener('click', (e) => {
