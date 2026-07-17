@@ -1,5 +1,5 @@
 /* ========================================
-   Codex Skin Workshop — Main Stylesheet v2
+   Codex Skin Workshop — Main Stylesheet v3
    ======================================== */
 
 :root {
@@ -321,16 +321,16 @@ body::before {
 
 /* ========== Gallery ========== */
 .gallery {
-  padding: 80px 0;
+  padding: 100px 0;
 }
 
 .section-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 20px;
 }
 
 .section-title {
@@ -339,47 +339,52 @@ body::before {
   letter-spacing: -0.02em;
 }
 
+/* ========== Filter Bar ========== */
 .filter-bar {
   display: flex;
-  gap: 6px;
+  gap: 4px;
   background: var(--bg-elevated);
-  padding: 4px;
-  border-radius: var(--radius-sm);
+  padding: 5px;
+  border-radius: 12px;
   border: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .filter-btn {
-  padding: 8px 18px;
+  padding: 9px 20px;
   background: transparent;
   border: none;
-  border-radius: var(--radius-xs);
+  border-radius: 7px;
   color: var(--text-muted);
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: inherit;
+  white-space: nowrap;
 }
 
-.filter-btn:hover {
-  color: var(--text-secondary);
+.filter-btn:hover:not(.active) {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .filter-btn.active {
-  background: var(--primary);
+  background: var(--gradient);
   color: #fff;
-  box-shadow: 0 2px 12px var(--primary-glow);
+  box-shadow: 0 2px 16px var(--primary-glow);
+  font-weight: 600;
 }
 
 /* ========== Theme Grid ========== */
 .theme-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 28px;
 }
 
 .theme-card {
-  background: var(--bg-card);
+  background: linear-gradient(180deg, var(--bg-card) 0%, rgba(21, 21, 40, 0.95) 100%);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
@@ -388,33 +393,41 @@ body::before {
   position: relative;
   display: flex;
   flex-direction: column;
-}
-
-.theme-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius);
-  background: linear-gradient(135deg, transparent 0%, transparent 100%);
-  opacity: 0;
-  transition: opacity 0.3s;
-  pointer-events: none;
-  z-index: 1;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
 }
 
 .theme-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   border-color: var(--border-hover);
-  box-shadow: var(--shadow-hover);
+  box-shadow: 0 16px 48px rgba(99, 102, 241, 0.18);
 }
 
-.theme-card:hover::before {
-  opacity: 1;
+/* Image-to-content gradient overlay */
+.theme-card::after {
+  content: '';
+  position: absolute;
+  top: calc(220px - 60px);
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(180deg, transparent 0%, var(--bg-card) 100%);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.theme-card-featured::after {
+  top: calc(260px - 60px);
+}
+
+.theme-card:hover::after {
+  opacity: 0.9;
 }
 
 .theme-preview {
   width: 100%;
-  height: 220px;
+  height: 240px;
   object-fit: cover;
   background: var(--bg);
   display: block;
@@ -426,11 +439,11 @@ body::before {
 }
 
 .theme-card-featured .theme-preview {
-  height: 260px;
+  height: 280px;
 }
 
 .theme-info {
-  padding: 20px;
+  padding: 24px 24px 22px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -440,7 +453,7 @@ body::before {
 }
 
 .theme-name {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -465,6 +478,7 @@ body::before {
 .theme-author {
   font-size: 13px;
   color: var(--text-muted);
+  margin-bottom: 2px;
 }
 
 .theme-description {
@@ -497,9 +511,9 @@ body::before {
 
 .theme-actions {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   margin-top: auto;
-  padding-top: 12px;
+  padding-top: 16px;
 }
 
 .btn-download, .btn-preview {
@@ -507,7 +521,7 @@ body::before {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 10px 18px;
+  padding: 12px 20px;
   border-radius: var(--radius-xs);
   font-size: 13px;
   font-weight: 600;
@@ -532,16 +546,19 @@ body::before {
 }
 
 .btn-preview {
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #e0e0f0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .btn-preview:hover {
   border-color: var(--primary);
   color: #fff;
-  background: rgba(99, 102, 241, 0.3);
+  background: rgba(99, 102, 241, 0.45);
 }
 
 /* ========== Modal ========== */
@@ -923,11 +940,16 @@ body::before {
   }
 
   .theme-grid {
+    gap: 20px;
     grid-template-columns: 1fr;
   }
 
   .theme-preview {
     height: 200px;
+  }
+
+  .theme-card-featured .theme-preview {
+    height: 240px;
   }
 
   .howto-steps {
@@ -971,7 +993,7 @@ body::before {
   }
 
   .filter-btn {
-    padding: 6px 14px;
+    padding: 7px 16px;
     font-size: 12px;
     white-space: nowrap;
   }

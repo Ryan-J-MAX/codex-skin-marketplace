@@ -10,7 +10,7 @@ const INSTALL_SCRIPT_URL = 'https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/re
 const THEME_ZIP_URL = 'https://github.com/Ryan-J-MAX/Codex-Skin-Workshop/releases/download/v1.0.0/theme-';
 
 // 图片版本号，更新时递增
-const IMG_VER = '7';
+const IMG_VER = '8';
 const IMG_BASE = 'assets/img/';
 
 const themes = [
